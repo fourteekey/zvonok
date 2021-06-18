@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Companies {% endblock %}
+{% block content %}
+  <table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for campaign in campaigns %}
+      <tr><th><a href="{% url 'campaign_calls' campaign.id %}"># {{ campaign.id }}</a></th></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

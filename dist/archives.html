@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %} Archives {% endblock %}
+{% block content %}
+  <table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">created</th>
+        <th scope="col">action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for archive in archives %}
+      <tr>
+        <th>{{ archive.id }}</th>
+        <td>{{ archive.updated }}</td>
+        <td>
+          {% if archive.download_url %}
+            <a href="{{ archive.download_url }}" target="_blank">Download</a>
+          {% else %}
+            <span class="{{ archive.css_style }}"> {{ archive.status }} </span>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
