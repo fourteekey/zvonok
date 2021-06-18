@@ -15,4 +15,6 @@ $ python manage.py createsuperuser
 ``
 $ docker-compose build
 $ docker-compose up
+$ docker exec <coinainer_id> python manage.py insert_archive_status 
+$ docker exec <coinainer_id> python manage.py insert_su -u root
 ``
